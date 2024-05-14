@@ -1,14 +1,14 @@
 model,threshold,prec,recall,fscore,evaluated_on,tp,fp,fn,tn
-votes,6,0.88649,0.84974,0.86772,testset,164,21,584,29
-shared_word_lower_common_no_numerical_difference,6,0.91111,0.80921,0.85714,testset,123,12,589,29
-shared_word_lower_common_difference,6,0.90511,0.81046,0.85517,testset,124,13,588,29
-shared_word_lower_common_no_numerical_difference,6,0.89583,0.81646,0.8543,testset,129,15,586,29
-shared_word_lower_common_difference,6,0.88435,0.81761,0.84967,testset,130,17,584,29
-shared_word_lower_common_no_numerical_difference,6,0.88356,0.81646,0.84868,testset,129,17,584,29
+votes,6,0.88649,0.84974,0.86772,testset,164,21,29,584
+shared_word_lower_common_no_numerical_difference,6,0.91111,0.80921,0.85714,testset,123,12,29,589
+shared_word_lower_common_difference,6,0.90511,0.81046,0.85517,testset,124,13,29,588
+shared_word_lower_common_no_numerical_difference,6,0.89583,0.81646,0.8543,testset,129,15,29,586
+shared_word_lower_common_difference,6,0.88435,0.81761,0.84967,testset,130,17,29,584
+shared_word_lower_common_no_numerical_difference,6,0.88356,0.81646,0.84868,testset,129,17,29,584
 shared_word_lower_threshold_6gram,"(6, 47)",0.801980198019802,0.84375,0.8223350253807107,testset,162,40,30,574
 shared_word_lower_threshold_5gram,"(6, 47)",0.7272727272727273,0.8803827751196173,0.7965367965367965,testset,184,69,25,559
-shared_word_lower_common_difference,6,0.77381,0.81761,0.79511,testset,130,38,568,29
-votes,6,0.71983,0.85204,0.78037,testset,167,65,552,29
+shared_word_lower_common_difference,6,0.77381,0.81761,0.79511,testset,130,38,29,568
+votes,6,0.71983,0.85204,0.78037,testset,167,65,29,552
 shared_word_lower_threshold,6,0.8962264150943396,0.6737588652482269,0.7692307692307693,testset,0,0,0,0
 shared_word_lower_threshold_4gram,"(6, 47)",0.6697819314641744,0.9033613445378152,0.7692307692307692,testset,215,106,23,543
 shared_word_lower_threshold,10,0.754601226993865,0.7639751552795031,0.7592592592592593,testset,0,0,0,0
@@ -34,11 +34,12 @@ shared_word_threshold,50,0.3580729166666667,0.9548611111111112,0.520833333333333
 shared_word_lower_threshold,50,0.3520958083832335,0.9607843137254902,0.5153374233128833,testset,0,0,0,0
 shared_word_lower_threshold,100,0.2946817785527463,0.976878612716763,0.4527796383121232,testset,0,0,0,0
 shared_word_threshold,100,0.2944444444444444,0.9724770642201837,0.4520255863539446,testset,0,0,0,0
-votes,6,0.89816,0.97422,0.93465,trainingset,1852,210,4116,49
-shared_word_lower_common_difference,6,0.88358,0.96402,0.92205,trainingset,1313,173,4116,49
-shared_word_lower_common_no_numerical_difference,6,0.87853,0.95326,0.91437,trainingset,1244,172,4116,61
-shared_word_lower_common_no_numerical_difference,6,0.8555,0.9584,0.90403,trainingset,1267,214,4076,55
-shared_word_lower_common_difference,6,0.81291,0.96866,0.88398,trainingset,1360,313,3999,44
-shared_word_lower_common_difference,6,0.86481,0.85297,0.85885,trainingset,934,146,4132,161
-shared_word_lower_common_no_numerical_difference,6,0.86304,0.84559,0.85422,trainingset,920,146,4132,168
-votes,6,0.55058,0.97428,0.70356,trainingset,1856,1515,3297,49
+votes,6,0.89816,0.97422,0.93465,trainingset,1852,210,49,4116
+votes,6,0.89816,0.97422,0.93465,trainingset,1852,210,49,4116
+shared_word_lower_common_difference,6,0.88358,0.96402,0.92205,trainingset,1313,173,49,4116
+shared_word_lower_common_no_numerical_difference,6,0.87853,0.95326,0.91437,trainingset,1244,172,61,4116
+shared_word_lower_common_no_numerical_difference,6,0.8555,0.9584,0.90403,trainingset,1267,214,55,4076
+shared_word_lower_common_difference,6,0.81291,0.96866,0.88398,trainingset,1360,313,44,3999
+shared_word_lower_common_difference,6,0.86481,0.85297,0.85885,trainingset,934,146,161,4132
+shared_word_lower_common_no_numerical_difference,6,0.86304,0.84559,0.85422,trainingset,920,146,168,4132
+votes,6,0.55058,0.97428,0.70356,trainingset,1856,1515,49,3297

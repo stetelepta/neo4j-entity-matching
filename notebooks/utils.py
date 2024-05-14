@@ -92,8 +92,8 @@ def get_model_results(graph, df, query, model_name, threshold, evaluated_on, deb
 
         tp = len(df_tp)
         fp = len(df_fp)
-        fn = len(df_tn)
-        tn = len(df_fn)
+        fn = len(df_fn)
+        tn = len(df_tn)
 
         results.append({'model': model_name, 'threshold': threshold, 'prec': np.round(prec, 5), 'recall': np.round(recall, 5), 'fscore': np.round(fscore, 5), 'evaluated_on': evaluated_on, 'tp': tp, 'fp': fp, 'fn': fn, 'tn': tn})
 
