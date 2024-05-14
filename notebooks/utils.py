@@ -1,3 +1,7 @@
+import numpy as np
+import pandas as pd
+from sklearn.metrics import precision_recall_fscore_support
+
 def build_queries(row, source):
     
     """
@@ -60,3 +64,38 @@ def build_match_queries(row):
     MERGE (i1)-[:{rel_type}]->(i2)
     """)
     return queries
+
+
+def get_model_results(graph, df, query, model_name, threshold, evaluated_on, debug=False):
+    results = []
+
+    if debug:
+        print(query)
+    
+    df_p = pd.DataFrame(graph.query(query))
+
+    if len(df_p) > 0:
+
+        df_eval_p = df.merge(df_p, left_on=['source_id', 'target_id'], right_on=['i1.subject_id', 'i2.subject_id'], how='left')
+        df_eval_p['p'] = df_eval_p['i1.subject_id'] > 0
+
+        prec, recall, fscore, support = precision_recall_fscore_support(df_eval_p['matching'], df_eval_p['p'], average='binary')
+
+        # store errors
+        cond_p1 = df_eval_p['p'] == True
+        cond_y1 = df_eval_p['matching'] == True
+
+        df_tp = df_eval_p[cond_p1 & cond_y1]
+        df_fp = df_eval_p[cond_p1 & ~cond_y1]
+        df_tn = df_eval_p[~cond_p1 & ~cond_y1]
+        df_fn = df_eval_p[~cond_p1 & cond_y1]
+
+        tp = len(df_tp)
+        fp = len(df_fp)
+        fn = len(df_tn)
+        tn = len(df_fn)
+
+        results.append({'model': model_name, 'threshold': threshold, 'prec': np.round(prec, 5), 'recall': np.round(recall, 5), 'fscore': np.round(fscore, 5), 'evaluated_on': evaluated_on, 'tp': tp, 'fp': fp, 'fn': fn, 'tn': tn})
+
+    df_results = pd.DataFrame(results).sort_values('fscore', ascending=False).reset_index(drop=True)
+    return df_results, {'df_tp': df_tp, 'df_fp': df_fp, 'df_tn': df_tn, 'df_fn': df_fn}
