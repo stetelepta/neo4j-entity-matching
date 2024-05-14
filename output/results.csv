@@ -1,5 +1,6 @@
 model,threshold,prec,recall,fscore,evaluated_on,tp,fp,fn,tn
 votes,6,0.88649,0.84974,0.86772,testset,164,21,29,584
+votes,6,0.88649,0.84974,0.86772,testset,164,21,29,584
 shared_word_lower_common_no_numerical_difference,6,0.91111,0.80921,0.85714,testset,123,12,29,589
 shared_word_lower_common_difference,6,0.90511,0.81046,0.85517,testset,124,13,29,588
 shared_word_lower_common_no_numerical_difference,6,0.89583,0.81646,0.8543,testset,129,15,29,586
